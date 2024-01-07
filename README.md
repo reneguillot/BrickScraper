@@ -27,14 +27,18 @@ BW doesn't seem to be protected by *User-Agent* string verification. In other wo
 
 After fetching the above URLs, the following regular expression on the HTML code retrieves links to all LEGO sets starting with that character/number:
 
+```
 <a href='(.+)' name='(.+)'>
+```
 
 Group 1 returns the direct deeplink into the LEGO set on the website; group 2 returns the LEGO set number which happens also to be part of the URL. Some examples:
 
+```
 <a href='/nl-NL/set/5007962/Baby-Dragon.html' name='5007962'>
 <a href='/nl-NL/set/10300/Back-to-the-Future-Time-Machine.html' name='10300'>
 <a href='/nl-NL/set/60333/Bathtub-Stunt-Bike.html' name='60333'>
 <a href='/nl-NL/set/5005580/LEGO-Banana-Guy-Luggage-Tag.html' name='5005580'>
+```
 
 ### Individual LEGO Set Data
 Each of the LEGO set deeplinks in the index must be retrieved individually. Again (like the index pages), *User-Agent* doesn't seem to be actively checked by BW, so Postman and/or automated processing seems possible.
